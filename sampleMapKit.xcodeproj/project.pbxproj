@@ -15,6 +15,7 @@
 		1BD825261BAA5772001E8AE3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BD825251BAA5772001E8AE3 /* Images.xcassets */; };
 		1BD825291BAA5772001E8AE3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD825271BAA5772001E8AE3 /* LaunchScreen.xib */; };
 		1BD825351BAA5772001E8AE3 /* sampleMapKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD825341BAA5772001E8AE3 /* sampleMapKitTests.m */; };
+		1BD8253F1BAA5845001E8AE3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD8253E1BAA5845001E8AE3 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		1BD8252E1BAA5772001E8AE3 /* sampleMapKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sampleMapKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD825331BAA5772001E8AE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BD825341BAA5772001E8AE3 /* sampleMapKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sampleMapKitTests.m; sourceTree = "<group>"; };
+		1BD8253E1BAA5845001E8AE3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BD8253F1BAA5845001E8AE3 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +68,7 @@
 		1BD825091BAA5771001E8AE3 = {
 			isa = PBXGroup;
 			children = (
+				1BD8253E1BAA5845001E8AE3 /* MapKit.framework */,
 				1BD825141BAA5772001E8AE3 /* sampleMapKit */,
 				1BD825311BAA5772001E8AE3 /* sampleMapKitTests */,
 				1BD825131BAA5772001E8AE3 /* Products */,
