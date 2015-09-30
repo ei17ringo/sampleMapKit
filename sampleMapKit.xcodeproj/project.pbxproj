@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B79F7601BBA2C31007072E4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B79F75F1BBA2C31007072E4 /* CoreLocation.framework */; };
 		1BD825181BAA5772001E8AE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD825171BAA5772001E8AE3 /* main.m */; };
 		1BD8251B1BAA5772001E8AE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD8251A1BAA5772001E8AE3 /* AppDelegate.m */; };
 		1BD8251E1BAA5772001E8AE3 /* sampleMapKit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1BD8251C1BAA5772001E8AE3 /* sampleMapKit.xcdatamodeld */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B79F75F1BBA2C31007072E4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1BD825121BAA5772001E8AE3 /* sampleMapKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleMapKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD825161BAA5772001E8AE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BD825171BAA5772001E8AE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B79F7601BBA2C31007072E4 /* CoreLocation.framework in Frameworks */,
 				1BD8253F1BAA5845001E8AE3 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +71,7 @@
 		1BD825091BAA5771001E8AE3 = {
 			isa = PBXGroup;
 			children = (
+				1B79F75F1BBA2C31007072E4 /* CoreLocation.framework */,
 				1BD8253E1BAA5845001E8AE3 /* MapKit.framework */,
 				1BD825141BAA5772001E8AE3 /* sampleMapKit */,
 				1BD825311BAA5772001E8AE3 /* sampleMapKitTests */,
@@ -356,6 +360,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = sampleMapKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -366,6 +371,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = sampleMapKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -424,6 +430,7 @@
 				1BD8253A1BAA5772001E8AE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1BD8253B1BAA5772001E8AE3 /* Build configuration list for PBXNativeTarget "sampleMapKitTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +439,7 @@
 				1BD8253D1BAA5772001E8AE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
