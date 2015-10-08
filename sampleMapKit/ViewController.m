@@ -19,6 +19,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
+
+    /*
+     location設定
+     */
+    //ユーザーによる位置情報サービスの許可状態をチェック
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusRestricted ||
+        [CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied)
+    {
+        //ユーザーはこのアプリによる位置情報サービスの利用を許可していない、または「設定」で無効にしている
+        NSLog(@"Location services is unauthorized.");
+    }
+    else {
+        //位置情報サービスを利用できる、またはまだ利用許可要求を行っていない
+        self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.delegate = self;
+        
+        //利用許可要求をまだ行っていない状態であれば要求
+        if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+            //許可の要求
+            //アプリがフォアグラウンドにある間のみ位置情報サービスを使用する許可を要求
+            [self.locationManager requestWhenInUseAuthorization];
+        }
+        //精度要求
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+        //最小移動間隔
+        self.locationManager.distanceFilter = 100.0;                    //100m 移動ごとに通知
+        //        self.locationManager.distanceFilter = kCLDistanceFilterNone;    //全ての動きを通知（デフォルト）
+        
+        //測位開始
+        [self.locationManager startUpdatingLocation];
+    }
     
     //MapViewオブジェクトを生成
     _mapView = [[MKMapView alloc] init];
@@ -124,25 +155,25 @@
  CLLocationManagerDelegate
  */
 //位置情報更新時に呼ばれる
-//- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-//{
-//    //ユーザの位置を表示するかどうか
-//    _mapView.showsUserLocation = YES;
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    //ユーザの位置を表示するかどうか
+    _mapView.showsUserLocation = YES;
+    
+//    //最新の位置情報を取得し、そこからマップの中心座標を決定
+//    CLLocation *currentLocation = locations.lastObject;
+//    CLLocationCoordinate2D centerCoordinate = currentLocation.coordinate;
+//    //縮尺度を指定
+//    MKCoordinateSpan coordinateSpan = MKCoordinateSpanMake(0.03, 0.03); //数が小さいほど拡大率アップ
 //    
-////    //最新の位置情報を取得し、そこからマップの中心座標を決定
-////    CLLocation *currentLocation = locations.lastObject;
-////    CLLocationCoordinate2D centerCoordinate = currentLocation.coordinate;
-////    //縮尺度を指定
-////    MKCoordinateSpan coordinateSpan = MKCoordinateSpanMake(0.03, 0.03); //数が小さいほど拡大率アップ
-////    
-////    //設定した縮尺で現在地を中心としたマップをセット（初回1回のみ）
-////    if (_alreadyStartingCoordinateSet == NO) {
-////        MKCoordinateRegion newRegion = MKCoordinateRegionMake(centerCoordinate, coordinateSpan);
-////        [_mapView setRegion:newRegion animated:YES];
-////        _alreadyStartingCoordinateSet = YES;
-////    }
-//
-//}
+//    //設定した縮尺で現在地を中心としたマップをセット（初回1回のみ）
+//    if (_alreadyStartingCoordinateSet == NO) {
+//        MKCoordinateRegion newRegion = MKCoordinateRegionMake(centerCoordinate, coordinateSpan);
+//        [_mapView setRegion:newRegion animated:YES];
+//        _alreadyStartingCoordinateSet = YES;
+//    }
+
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
